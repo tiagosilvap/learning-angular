@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'meuprojeto';
+
+  users: User[] = [];
+
+  addUser(user : User) {
+    this.users.push(user);
+  }
+}
+
+interface User {
+  id: number
+  name: string
 }

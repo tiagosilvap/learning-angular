@@ -1,0 +1,8 @@
+<div class="mt-5 mb-5">
+  <div class="card" [ngStyle]="getCardStyle()">
+    <img class="card-img-top" src="https://randomuser.me/api/portraits/men/{{buyer.id}}.jpg">
+    <div class="card-block">
+      <span class="badge" [ngClass]="{ 'bg-danger': isAdmin(), 'bg-primary': !isAdmin() }">{{buyer.name}}</span>
+    </div>
+  </div>
+</div>

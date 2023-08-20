@@ -1,0 +1,38 @@
+<div class="mt-5 mb-5">
+
+  <form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Nome [Copia nome do elemento para a propriedade e vice-verca]</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" (input)="setName($event)" [value]="name" #nameInput>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputAddress1" class="form-label">Copia nome do elemento para a propriedade e vice-verca</label>
+      <input disabled type="email" class="form-control" id="exampleInputAddress1" aria-describedby="emailHelp" [(ngModel)]="name" name="first name">
+    </div>
+
+    <div class="mb-3">
+      <label for="disabledInput" class="form-label">Copia nome da propriedade para o elemento</label>
+      <input disabled class="form-control" id="disabledInput" type="text" [value]="name">
+    </div>
+
+    <div class="mb-3">
+      <label for="disabledInput2" class="form-label">Copia nome do elemento para a propriedade</label>
+      <input class="form-control" id="disabledInput2" type="text" (input)="setName($event)">
+    </div>
+
+    <div>
+      <div class="alert alert-success alert-dismissible" role="alert" *ngIf="displayAlert">
+        <div>Nice, you triggered this alert message!</div>
+        <button (click)="hideAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+
+    <button (click)="showAlert()" type="button" class="btn btn-primary" [disabled]="name.length == 0">Mostrar alerta</button>
+    <button (click)="concatName(nameInput.value)" type="button" class="btn btn-primary mx-2" [disabled]="name.length == 0">Concatenar nome</button>
+    <button (click)="addUser()" type="button" class="btn btn-primary" [disabled]="name.length == 0">Adicionar foto</button>
+
+
+  </form>
+</div>
+
